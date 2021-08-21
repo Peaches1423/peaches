@@ -1,6 +1,7 @@
 # peaches-app
 
 こんばんわ
+こんにちは
 
 ## Project setup
 
