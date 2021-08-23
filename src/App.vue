@@ -1,32 +1,69 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+  <div>
+    <div class="nav_bar">
+      <router-link to="/" class="nav_item nav_link"> タイトル</router-link>
+      <div class="nav_items">
+        <router-link to="/" class="nav_item nav_link">Home</router-link>
+        <router-link to="/" class="nav_item nav_link">ログイン画面</router-link>
+      </div>
     </div>
-    <router-view />
+
+    <body>
+      <h2>投稿フォーム</h2>
+      <div class="username">
+        <p>ニックネーム</p>
+        <textarea class="form_username" v-model="text" />
+      </div>
+      <p>日付</p>
+      <p>最近起こった出来事・感想</p>
+      <textarea class="form_textarea" v-model="text" />
+      <div class="form_button">
+        <button v-on:click="post" class="form_submit-button">投稿する</button>
+      </div>
+    </body>
   </div>
 </template>
 
+<script>
+export default {
+  data() {
+    return {
+      text: "",
+    }
+  },
+  methods: {
+    post() {
+      alert("投稿機能の完成をお楽しみに！")
+    },
+  },
+}
+</script>
+
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+.nav_bar {
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  background-color: aqua;
 }
 
-#nav {
-  padding: 30px;
+.nav_link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  text-decoration: none;
 }
 
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
+.username {
+  display: flex;
 }
-
-#nav a.router-link-exact-active {
-  color: #42b983;
+.form_username {
+  height: 15px;
+}
+.form_textarea {
+  height: 10em;
+  width: 30em;
 }
 </style>
