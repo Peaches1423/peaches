@@ -1,18 +1,23 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+    <h1>就職活動を乗り切ろう！就活情報シェアサイト</h1>
+    <h2>就職活動に関することは何でも投稿・シェアできるサイトです！</h2>
+    <div>
+      このサイトは何年卒業の方でもご利用いただけます。<br />主な使い方は、本サイトにログインし、就職活動で起った出来事や悩み、愚痴など今思っていることを投稿します。
+      <br />すると、ほかの利用者様にシェアされ、返信やいいね！をもらったり、ご自身の就職活動の不安等を解消したりすることもできます。
+      <br />では、あなたが思っている就職活動に対する全てを打ち明けてみましょう！
+    </div>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue"
+// import HelloWorld from "@/components/HelloWorld.vue"
 
 export default {
   name: "Home",
   components: {
-    HelloWorld,
+    // HelloWorld,
   },
 }
 </script>
