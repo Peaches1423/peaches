@@ -22,7 +22,7 @@
         <textarea class="form_username" v-model="text" />
       </div>
 
-      <select name="卒業年度">
+      <select v-model="nendo">
         <option selected>卒業年度</option>
         <option>21卒以前</option>
         <option>22卒</option>
@@ -53,26 +53,20 @@ export default {
   data() {
     return {
       posts: [],
+      form_username: "",
+      nendo: "",
+      form_textarea: "",
     }
   },
   methods: {
-    posting() {
-      const post = {
-        graduation_year: "卒業年度を入れたい",
-        text: "form_textareaの内容にしたい",
-        createdAt: firebase.firestore.FieldValue.serverTimestamp(),
-      }
-      firebase
-        .firestore()
-        .collection("posts")
-        .add(post)
-        .then((ref) => {
-          this.posts.push({
-            id: ref.id,
-            ...post,
-          })
-        })
-    },
+    posts() {
+     firebase.firestore().collection("posts").add(){
+        this.form_username,
+        this.nendo,
+        this.form_textarea,
+
+     }
+    }
   },
 }
 </script>
