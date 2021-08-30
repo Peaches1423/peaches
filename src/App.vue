@@ -8,20 +8,54 @@
       </div>
     </div>
 
-    <body>
-      <div class="username">
-        <p>ニックネーム</p>
-      </div>
-      <p>卒</p>
-      <p>日付</p>
-      <textarea class="form_textarea" v-model="text" />
-      <div class="like_button">
-        <button v-on:click="post" class="like-button">いいね！</button>
-      </div>
-    </body>
+    <div class="username">
+      <p>ニックネーム</p>
+    </div>
+    <p>卒</p>
+    <p>日付</p>
+    <div id="app">
+      <div>{{ posts[0].text }}</div>
+    </div>
+    <div class="btn" v-on:click="changeState">
+      いいね<font-awesome-icon
+        v-bind:class="{ like_button: buttonState }"
+        v-on:click="changeState"
+        icon="heart"
+      />
+    </div>
   </div>
 </template>
 
+<script>
+import firebase from "firebase"
+export default {
+  data() {
+    return {
+      posts: [],
+      buttonState: false,
+    }
+  },
+  methods: {
+    changeState: function () {
+      this.buttonState = !this.buttonState
+    },
+  },
+  created: function () {
+    firebase
+      .firestore()
+      .collection("posts")
+      .get()
+      .then((docs) => {
+        // success
+        docs.forEach((doc) => {
+          // console.log(doc.data())
+          this.posts.push(doc.data())
+        })
+      })
+    this.$refs.ThumbsUp.active = true
+  },
+}
+</script>
 <style>
 .nav_bar {
   height: 50px;
@@ -48,5 +82,13 @@
 .form_textarea {
   height: 10em;
   width: 30em;
+}
+.btn {
+  width: 5rem;
+  cursor: pointer;
+}
+.like_button {
+  color: #ff0000;
+  box-shadow: none;
 }
 </style>
