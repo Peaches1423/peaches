@@ -15,35 +15,27 @@
         </div>
       </div>
     </div>
-    <body>
-      <h2>投稿フォーム</h2>
-      <div class="username">
-        <p>ニックネーム</p>
-        <textarea class="form_username" v-model="text" />
-      </div>
+    <h2>投稿フォーム</h2>
+    <div class="username">
+      <p>ニックネーム</p>
+      <input type="text" v-model="form_username" />
+    </div>
 
-      <select v-model="nendo">
-        <option selected>卒業年度</option>
-        <option>21卒以前</option>
-        <option>22卒</option>
-        <option>23卒</option>
-        <option>24卒</option>
-        <option>25卒以降</option>
-      </select>
-      <div class="form">
-        <p>最近起こった出来事・感想</p>
-        <textarea
-          class="form_textarea"
-          placeholder="何でもご自由にどうぞ！"
-          v-model="text"
-        />
-      </div>
-      <div class="form_button">
-        <button v-on:click="posting" class="form_submit-button">
-          投稿する
-        </button>
-      </div>
-    </body>
+    <select v-model="nendo">
+      <option selected>卒業年度</option>
+      <option>21卒以前</option>
+      <option>22卒</option>
+      <option>23卒</option>
+      <option>24卒</option>
+      <option>25卒以降</option>
+    </select>
+    <div class="form">
+      <p>最近起こった出来事・感想</p>
+      <textarea placeholder="何でもご自由にどうぞ！" v-model="form_textarea" />
+    </div>
+    <div class="form_button">
+      <button v-on:click="posting" class="form_submit-button">投稿する</button>
+    </div>
   </div>
 </template>
 
@@ -59,14 +51,13 @@ export default {
     }
   },
   methods: {
-    posts() {
-     firebase.firestore().collection("posts").add(){
-        this.form_username,
-        this.nendo,
-        this.form_textarea,
-
-     }
-    }
+    posting() {
+      firebase.firestore().collection("posts").add({
+        form_username: this.form_username,
+        nendo: this.nendo,
+        form_textarea: this.form_textarea,
+      })
+    },
   },
 }
 </script>
