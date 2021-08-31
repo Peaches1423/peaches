@@ -8,7 +8,7 @@
     <div v-if="isLoggin">ログイン中</div>
     <div v-else>ログインしていません
     <div @click="login">ログインボタン</div>
-    <div>ログアウト</div>
+    <div@click="logOut">ログアウト</div>
   </div>
 </template>
 
@@ -33,7 +33,14 @@ this.isLoggin = true
 }
   })
 },
-
+logOut(){
+  firebase
+  .auth()
+  .signOut()
+  .then(()  =>  {
+    this.isLoggin   = false
+  })
+}
 </script>
 
 <style>
