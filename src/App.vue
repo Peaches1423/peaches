@@ -28,14 +28,14 @@
         <option>25卒以降</option>
       </select>
     </div>
-    <div class="university">
+    <div class="uni">
       <p>大学名</p>
-      <input type="text" />
+      <input type="text" v-model="university" />
     </div>
     <div class="bunri">
       <p>文理</p>
-      <input type="radio" value="bunkei" />文系
-      <input type="radio" value="rikei" />理系
+      <input type="radio" v-model="bunkei" />文系
+      <input type="radio" v-model="rikei" />理系
     </div>
     <div>
       <div>
@@ -125,7 +125,7 @@ export default {
 }
 
 .nav_link {
-  display: flex;
+  display: block;
   justify-content: center;
   align-items: center;
   height: 100%;
