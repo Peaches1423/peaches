@@ -6,7 +6,7 @@
           就活情報シェアサイト</router-link
         >
         <div class="nav_items">
-          <router-link to="/" class="nav_item nav_home">Home</router-link>
+          <router-link to="/" class="nav_home">Home</router-link>
           <div>
             <router-link to="/" class="nav_login">ログイン画面</router-link>
           </div>
@@ -28,7 +28,7 @@
         <option>25卒以降</option>
       </select>
     </div>
-    <div>
+    <div class="university">
       <p>大学名</p>
       <input type="text" />
     </div>
@@ -50,7 +50,7 @@
       </div>
       <div>
         <p>インターンor本選考</p>
-        <select v-model="internorhonsenkou">
+        <select v-model="internorHonsenkou">
           <option>インターン</option>
           <option>本選考</option>
           <option>その他</option>
@@ -84,6 +84,11 @@ export default {
       posts: [],
       form_username: "",
       nendo: "",
+      university: "",
+      bunri: "",
+      gyoukai: "",
+      internorHonsenkou: "",
+      dankai: "",
       form_textarea: "",
     }
   },
@@ -92,6 +97,11 @@ export default {
       firebase.firestore().collection("posts").add({
         form_username: this.form_username,
         nendo: this.nendo,
+        university: this.university,
+        bunri: this.bunri,
+        gyoukai: this.gyoukai,
+        internHonsenkou: this.internHonsenkou,
+        dankai: this.dankai,
         form_textarea: this.form_textarea,
       })
     },
@@ -133,7 +143,6 @@ export default {
 .nav_login {
   color: white;
 }
-
 .username {
   display: flex;
   height: 20px;
