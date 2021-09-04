@@ -1,12 +1,12 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/BeforeSignIn">Before Sign In Page</router-link>
-      <router-link to="/AfterSignIn">After Sign In Page</router-link>
+      <router-link to="/BeforeSignIn">ログアウト画面へ</router-link>
+      <router-link to="/AfterSignIn">ログイン画面へ</router-link>
     </div>
     <div class="sign-in">
-      <span @click="signIn">Sign In</span>
-      <span @click="signOut">Sign Out</span>
+      <span @click="signIn">ログインはここから！</span>
+      <span @click="signOut">ログアウト！お疲れさま！</span>
     </div>
     <router-view />
   </div>
@@ -34,26 +34,26 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  color: #38b983;
 }
 #nav {
   padding: 30px;
 }
 #nav a {
   font-weight: bold;
-  color: #2c3e50;
+  color: #e93c11;
   padding: 0 1rem;
 }
 #nav a:hover {
-  color: #2c3e502b;
+  color: #f0432c2b;
 }
 .sign-in span {
   font-weight: bold;
-  color: #2c3e50;
+  color: #e746cc;
   padding: 0 1rem;
 }
 .sign-in span:hover {
-  color: #2c3e502b;
+  color: #145ea32b;
 }
 #nav a.router-link-exact-active {
   color: #42b983;
