@@ -1,16 +1,14 @@
 <template>
   <div class="form-page">
-    <div>
+    <div class="header">
       <div class="nav_bar">
-        <router-link to="/" class="nav_item nav_link">
+        <router-link to="/" class="nav_title">
           就活情報シェアサイト</router-link
         >
         <div class="nav_items">
-          <router-link to="/" class="nav_item nav_link">Home</router-link>
+          <router-link to="/" class="nav_item nav_home">Home</router-link>
           <div>
-            <router-link to="/" class="nav_item nav_link"
-              >ログイン画面</router-link
-            >
+            <router-link to="/" class="nav_login">ログイン画面</router-link>
           </div>
         </div>
       </div>
@@ -122,6 +120,18 @@ export default {
   align-items: center;
   height: 100%;
   text-decoration: none;
+}
+
+.nav_title {
+  color: white;
+}
+
+.nav_home {
+  color: white;
+}
+
+.nav_login {
+  color: white;
 }
 
 .username {
