@@ -6,10 +6,8 @@
           就活情報シェアサイト</router-link
         >
         <div class="nav_items">
-          <router-link to="/" class="nav_home">Home</router-link>
-          <div>
-            <router-link to="/" class="nav_login">ログイン画面</router-link>
-          </div>
+          <router-link to="/" class="item">Home</router-link>
+          <router-link to="/" class="item">ログイン画面</router-link>
         </div>
       </div>
     </div>
@@ -32,25 +30,28 @@
       <p>大学名</p>
       <input type="text" v-model="university" />
     </div>
-    <div class="bunri">
+    <div class="sentaku">
       <p>文理</p>
-      <input type="radio" v-model="bunkei" />文系
-      <input type="radio" v-model="rikei" />理系
+      <input type="radio" v-model="bunri" value="文系" id="human" />
+      <label for="bun">文系</label>
+      <input type="radio" v-model="bunri" value="理系" id="science" />
+      <label for="ri">理系</label>
     </div>
     <div>
       <div>
         <p>業界</p>
         <select v-model="gyoukai">
-          <option selected>業界</option>
           <option>メーカー</option>
           <option>商社</option>
+          <option>金融</option>
           <option>マスコミ</option>
+          <option>IT</option>
           <option>その他</option>
         </select>
       </div>
       <div>
         <p>インターンor本選考</p>
-        <select v-model="internorHonsenkou">
+        <select v-model="internOrHonsenkou">
           <option>インターン</option>
           <option>本選考</option>
           <option>その他</option>
@@ -87,7 +88,7 @@ export default {
       university: "",
       bunri: "",
       gyoukai: "",
-      internorHonsenkou: "",
+      internOrHonsenkou: "",
       dankai: "",
       form_textarea: "",
     }
@@ -95,12 +96,13 @@ export default {
   methods: {
     posting() {
       firebase.firestore().collection("posts").add({
+        createdAt: firebase.firestore.FieldValue.serverTimestamp(),
         form_username: this.form_username,
         nendo: this.nendo,
         university: this.university,
         bunri: this.bunri,
         gyoukai: this.gyoukai,
-        internHonsenkou: this.internHonsenkou,
+        internOrHonsenkou: this.internOrHonsenkou,
         dankai: this.dankai,
         form_textarea: this.form_textarea,
       })
@@ -124,20 +126,19 @@ export default {
   opacity: 0.7;
 }
 
-.nav_link {
-  display: block;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  text-decoration: none;
+.nav_items {
+  display: flex;
 }
 
 .nav_title {
   color: white;
+  font-size: 1.2em;
+  padding-left: 5px;
 }
 
-.nav_home {
+.item {
   color: white;
+  padding: 15px;
 }
 
 .nav_login {
