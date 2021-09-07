@@ -8,7 +8,24 @@
       </div>
     </div>
 
-    <div class="username">
+    <div id="title">閲覧ページ</div>
+    <div class="category">
+      <div v-for="posts in cage" :key="posts.id">
+        <div class="box">
+          <div id="name">ユーザーネーム:{{ posts.form_username }}</div>
+          <div id="uni">大学:{{ posts.university }}</div>
+          <div id="bunrii">文理:{{ posts.bunri }}</div>
+          <div id="nendoo">卒業年度:{{ posts.nendo }}</div>
+          <div id="internorhonsenkouu">
+            インターン/本選考:{{ posts.internOrHonsenkou }}
+            <div id="gyoukaii">業界:{{ posts.gyoukai }}</div>
+            <div id="dankaii">段階:{{ posts.dankai }}</div>
+            <div id="kansou">感想:{{ posts.form_textarea }}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- <div class="username">
       <p>ニックネーム</p>
     </div>
     <p>卒</p>
@@ -22,7 +39,7 @@
         v-on:click="changeState"
         icon="heart"
       />
-    </div>
+    </div> -->
   </div>
 </template>
 
@@ -31,30 +48,49 @@ import firebase from "firebase"
 export default {
   data() {
     return {
-      posts: [],
-      buttonState: false,
+      cage: [],
     }
   },
-  methods: {
-    changeState: function () {
-      this.buttonState = !this.buttonState
-    },
-  },
-  created: function () {
+  created() {
     firebase
       .firestore()
       .collection("posts")
       .get()
-      .then((docs) => {
-        // success
-        docs.forEach((doc) => {
-          // console.log(doc.data())
-          this.posts.push(doc.data())
+      .then((snapshot) => {
+        snapshot.docs.forEach((doc) => {
+          this.cage.push({
+            id: doc.id,
+            ...doc.data(),
+          })
         })
       })
-    this.$refs.ThumbsUp.active = true
   },
 }
+// data() {
+//   return {
+//     posts: [],
+//     buttonState: false,
+//   }
+// },
+// methods: {
+//   changeState: function () {
+//     this.buttonState = !this.buttonState
+//   },
+// },
+// created: function () {
+//   firebase
+//     .firestore()
+//     .collection("posts")
+//     .get()
+//     .then((docs) => {
+//       // success
+//       docs.forEach((doc) => {
+//         // console.log(doc.data())
+//         this.posts.push(doc.data())
+//       })
+//     })
+//   this.$refs.ThumbsUp.active = true
+// },
 </script>
 <style>
 .nav_bar {
