@@ -143,7 +143,7 @@ export default {
 .nav_title {
   color: white;
   font-size: 1.2em;
-  padding-left: 5px;
+  padding: 10px;
 }
 
 .nav_title:hover {
@@ -153,7 +153,7 @@ export default {
 
 .item {
   color: white;
-  padding: 15px;
+  padding: 10px;
 }
 
 .nav_login {
