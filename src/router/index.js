@@ -1,7 +1,7 @@
 import Vue from "vue"
 import VueRouter from "vue-router"
 import Home from "../views/Home.vue"
-import postForm from "../views/postForm.vue"
+import postForm from "@/views/postForm.vue"
 
 Vue.use(VueRouter)
 
@@ -21,7 +21,7 @@ const routes = [
       import(/* webpackChunkName: "about" */ "../views/About.vue"),
   },
   {
-    path: "/post-form",
+    path: "/postform",
     name: "postForm",
     component: postForm,
   },
