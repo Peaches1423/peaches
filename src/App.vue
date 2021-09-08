@@ -102,6 +102,7 @@ export default {
 .nav_bar {
   font-family: Hannotate SC;
   font-size: 120%;
+  padding: 15px;
   color: rgba(255, 255, 255, 0.253);
   height: 100px;
   display: flex;
@@ -111,6 +112,8 @@ export default {
   background-color: rgb(240, 194, 215);
 }
 .nav_items {
+  display: flex;
+  padding: 15px;
 }
 .box {
   height: auto;
@@ -129,6 +132,7 @@ export default {
   font-family: TsukuARdGothic-Regular;
   font-size: 120%;
   display: flex;
+  padding: 15px;
   justify-content: center;
   /* align-items: center; */
   height: 100%;
@@ -138,7 +142,6 @@ export default {
   color: rgba(66, 59, 59, 0.986);
   font-family: TsukuARdGothic-Regular;
   font-size: 120%;
-  display: flex;
   justify-content: center;
   align-items: center;
   height: 100%;
@@ -152,9 +155,9 @@ export default {
   top: 0;
   left: 0;
 
-  /*背景画像の設定*/
+  /* 背景画像の設定
   background: url(https://images.unsplash.com/photo-1624220330071-9df752d24688?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80);
-  background-size: cover;
+  background-size: cover; */
 
   /*透過の設定*/
   opacity: 0.3;
