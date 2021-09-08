@@ -94,21 +94,6 @@ export default {
 // },
 </script>
 <style>
-.bg {
-  /*位置の設定*/
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-
-  /*背景画像の設定*/
-  background: url(https://images.unsplash.com/photo-1624220330071-9df752d24688?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80);
-  background-size: cover;
-
-  /*透過の設定*/
-  opacity: 0.3;
-}
 .title {
   font-family: TsukuARdGothic-Regular;
   font-size: 120%;
@@ -127,12 +112,25 @@ export default {
 }
 .nav_items {
 }
+.box {
+  height: auto;
+  width: 20em;
+
+  margin: 0 auto;
+
+  padding: 1em 1.5em;
+
+  background-color: #fff0f5;
+  border: 1px solid #9370db;
+  color: #000000;
+  border-radius: 10px;
+}
 .nav_link {
   font-family: TsukuARdGothic-Regular;
   font-size: 120%;
   display: flex;
   justify-content: center;
-  align-items: center;
+  /* align-items: center; */
   height: 100%;
   text-decoration: none;
 }
@@ -146,21 +144,39 @@ export default {
   height: 100%;
   text-decoration: none;
 }
-/* .form_username {
-  font-family: TsukuARdGothic-Regular;
-  height: 15px;
+.bg {
+  /*位置の設定*/
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  /*背景画像の設定*/
+  background: url(https://images.unsplash.com/photo-1624220330071-9df752d24688?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80);
+  background-size: cover;
+
+  /*透過の設定*/
+  opacity: 0.3;
 }
-.form_textarea {
-  font-family: TsukuARdGothic-Regular;
-  height: 10em;
-  width: 30em;
+
+/* .nav_bar {
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  background-color: aqua;
 }
-.btn {
-  font-family: TsukuARdGothic-Regular;
-  width: 5rem;
-  cursor: pointer;
-}
-.uni {
+
+.nav_link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  text-decoration: none;
+} */
+
+/* .uni {
   font-family: TsukuARdGothic-Regular;
   width: 5rem;
   cursor: pointer;
