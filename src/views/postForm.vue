@@ -128,7 +128,7 @@ export default {
   display: flex;
   justify-content: space-between;
   align-items: stretch;
-  background-color: #492f10;
+  background-color: #fa9480;
   opacity: 0.7;
 }
 
@@ -137,7 +137,7 @@ export default {
 }
 
 .nav_items :hover {
-  color: pink;
+  background-color: #fa808b;
   transition: all 0.25s;
 }
 .nav_title {
@@ -145,6 +145,12 @@ export default {
   font-size: 1.2em;
   padding-left: 5px;
 }
+
+.nav_title:hover {
+  background-color: #fa808b;
+  transition: all 0.25s;
+}
+
 .item {
   color: white;
   padding: 15px;
