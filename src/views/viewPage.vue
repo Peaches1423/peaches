@@ -98,7 +98,7 @@ export default {
 </script>
 <style>
 .nav_item {
-  color: #000000;
+  color: #9370db;
 }
 
 .eturan {

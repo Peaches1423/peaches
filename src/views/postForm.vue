@@ -122,6 +122,7 @@
             <textarea
               placeholder="何でもご自由にどうぞ！"
               v-model="form_textarea"
+              style="background-color: #fff0f5"
             />
           </label>
         </div>
@@ -178,7 +179,7 @@ export default {
 }
 
 .nav_bar {
-  height: 50px;
+  height: 100px;
   display: flex;
   justify-content: space-between;
   align-items: stretch;
