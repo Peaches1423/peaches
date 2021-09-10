@@ -1,13 +1,24 @@
 <template>
-  <div>
-    <div class="demo demo7">
-      <div class="heading">
-        <span class="title">就職活動を乗り切ろう！</span>
-        <span class="caption">就活情報シェアサイト</span>
-      </div>
+  <div id="app">
+    <div id="nav">
+      <router-link to="/BeforeSignIn">ログアウト画面へ</router-link>
     </div>
-    <h1>ログインしました！</h1>
-    <UserProfile />
+    <div class="sign-in">
+      <span @click="signIn">ログインはここから！</span>
+      <span @click="signOut">ログアウト！お疲れさま！</span>
+    </div>
+    <router-view />
+
+    <div>
+      <div class="demo demo7">
+        <div class="heading">
+          <span class="title">就職活動を乗り切ろう！</span>
+          <span class="caption">就活情報シェアサイト</span>
+        </div>
+      </div>
+      <h1>ログインしました！</h1>
+      <UserProfile />
+    </div>
   </div>
 </template>
 
