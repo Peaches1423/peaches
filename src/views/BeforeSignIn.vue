@@ -3,23 +3,20 @@
     <div class="demo demo4">
       <div class="heading">
         <h1>就職活動を乗り切ろう！就活情報シェアサイト</h1>
+        
       </div>
     </div>
 
     <h2>就職活動に関することは何でも投稿・シェアできるサイトです！</h2>
     <div>
-      <ol>
-        <li>このサイトは何年卒業の方でもご利用いただけます。</li>
-        <li>
-          主な使い方は、本サイトにログインし、就職活動で起った出来事や悩み、愚痴など今思っていることを投稿します。
-        </li>
-        <li>
-          すると、ほかの利用者様にシェアされ、返信やいいね！をもらったり、ご自身の就職活動の不安等を解消したりすることもできます。
-        </li>
-        <li>
-          では、あなたが思っている就職活動に対する全てを打ち明けてみましょう！
-        </li>
-      </ol>
+      このサイトは何年卒業の方でもご利用いただけます。<br />主な使い方は、本サイトにログインし、就職活動で起った出来事や悩み、愚痴など今思っていることを投稿します。
+      <br />すると、ほかの利用者様にシェアされ、返信やいいね！をもらったり、ご自身の就職活動の不安等を解消したりすることもできます。
+      <br />では、あなたが思っている就職活動に対する全てを打ち明けてみましょう！
+      <p>
+        <small
+          ><br />※ログインしないと本WEBサイトはご使用になれません。ご了承ください。</small
+        >
+      </p>
     </div>
   </div>
 </template>
@@ -34,14 +31,16 @@ height: 20px; z-index: -1; } .demo4 .heading:after { left: 2px; transform:
 rotate(120deg); } .demo4 .heading:before { right: 2px; transform: rotate(60deg);
 } ol { list-style-type: none; } div { text-align: justify; }
 
-<script>
-// @ is an alias to /src
-// import HelloWorld from "@/components/HelloWorld.vue"
 
-export default {
-  name: "Home",
-  components: {
-    // HelloWorld,
-  },
-}
-</script>
+ <style media="screen">
+          * {
+            /* 初期化 */
+            margin: 0px;
+            padding: 0px;
+          }
+          .sample1 {
+            background: pink;
+            width: 5px;
+            height: 10px;
+            position: static;
+          }
