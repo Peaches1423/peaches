@@ -2,9 +2,11 @@
   <div>
     <div class="bg"></div>
     <div class="nav_bar">
-      <router-link to="/" class="nav_item nav_link">タイトル</router-link>
+      <h1 class="nav_item nav_link">
+        就職活動を乗り切ろう！<br />就活情報シェアサイト
+      </h1>
       <div class="nav_items">
-        <router-link to="/" class="nav_item nav_link">投稿</router-link>
+        <router-link to="/postForm" class="nav_item nav_link">投稿</router-link>
         <router-link to="/" class="nav_item nav_link">ログイン画面</router-link>
       </div>
     </div>
@@ -94,6 +96,10 @@ export default {
 // },
 </script>
 <style>
+.nav_item {
+  color: #000000;
+}
+
 .title {
   font-family: TsukuARdGothic-Regular;
   font-size: 120%;
@@ -103,7 +109,7 @@ export default {
   font-family: Hannotate SC;
   font-size: 120%;
   padding: 15px;
-  color: rgba(255, 255, 255, 0.253);
+  color: rgba(220, 196, 196, 0);
   height: 100px;
   display: flex;
   justify-content: space-between;

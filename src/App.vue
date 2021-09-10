@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <router-view />
     <div id="nav">
       <router-link to="/BeforeSignIn">ログアウト画面へ</router-link>
       <router-link to="/AfterSignIn">ログイン画面へ</router-link>
@@ -8,7 +9,6 @@
       <span @click="signIn">ログインはここから！</span>
       <span @click="signOut">ログアウト！お疲れさま！</span>
     </div>
-    <router-view />
   </div>
 </template>
 
@@ -29,6 +29,11 @@ export default {
 </script>
 
 <style>
+body {
+  background-image: url(https://images.unsplash.com/photo-1624220330071-9df752d24688?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80); /* 背景画像指定 */
+  background-repeat: repeat-y;
+}
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

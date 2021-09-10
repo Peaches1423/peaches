@@ -3,6 +3,8 @@ import VueRouter from "vue-router"
 import BeforeSignIn from "@/views/BeforeSignIn.vue"
 import AfterSignIn from "@/views/AfterSignIn.vue"
 import firebase from "firebase"
+import postForm from "@/views/postForm.vue"
+import viewPage from "@/views/viewPage.vue"
 
 Vue.use(VueRouter)
 
@@ -20,6 +22,16 @@ const routes = [
     path: "/AfterSignIn",
     name: "AfterSignIn",
     component: AfterSignIn,
+  },
+  {
+    path: "/postForm",
+    name: "postForm",
+    component: postForm,
+  },
+  {
+    path: "/viewPage",
+    name: "viewPage",
+    component: viewPage,
   },
 ]
 

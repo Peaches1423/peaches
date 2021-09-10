@@ -6,7 +6,7 @@
           就活情報シェアサイト</router-link
         >
         <div class="nav_items">
-          <router-link to="/" class="item">Home</router-link>
+          <router-link to="/viewPage" class="item">閲覧画面へ</router-link>
           <router-link to="/" class="item">ログイン画面</router-link>
         </div>
       </div>
