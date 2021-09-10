@@ -11,6 +11,6 @@
 .form-page {
   background: url(../images/peach.jpg);
   background-size: 100% auto;
-  opacity: 0.8;
+  opacity: 0.7;
 }
 </style>
