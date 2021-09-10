@@ -11,7 +11,7 @@
       </div>
     </div>
 
-    <div class="title">閲覧ページ</div>
+    <h1 class="eturan">閲覧ページ</h1>
     <div class="category">
       <div v-for="posts in cage" :key="posts.id">
         <div class="box">
@@ -58,6 +58,7 @@ export default {
     firebase
       .firestore()
       .collection("posts")
+      .orderBy("createdAt", "desc")
       .get()
       .then((snapshot) => {
         snapshot.docs.forEach((doc) => {
@@ -100,15 +101,14 @@ export default {
   color: #000000;
 }
 
-.title {
-  font-family: TsukuARdGothic-Regular;
-  font-size: 120%;
-  display: flex;
+.eturan {
+  color: #9370db;
+  text-align: center;
 }
 .nav_bar {
   font-family: Hannotate SC;
   font-size: 120%;
-  padding: 15px;
+  /* padding: 15px; */
   color: rgba(220, 196, 196, 0);
   height: 100px;
   display: flex;

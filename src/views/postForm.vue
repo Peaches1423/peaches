@@ -12,12 +12,19 @@
       </div>
     </div>
     <div class="nakami">
-      <h2>投稿フォーム</h2>
+      <h2 class="toukou_title">投稿フォーム</h2>
       <!-- ニックネーム -->
-      <div class="cp_iptxt">
-        <input class="ef" type="text" placeholder="" v-model="form_username" />
-        <label>ニックネーム</label>
-        <span class="focus_line"></span>
+      <div class="namae">
+        <div class="cp_iptxt">
+          <input
+            class="ef"
+            type="text"
+            placeholder=""
+            v-model="form_username"
+          />
+          <label>ニックネーム</label>
+          <span class="focus_line"></span>
+        </div>
       </div>
       <!--ニックネーム終わり-->
       <div class="cp_selectYear">
@@ -108,14 +115,16 @@
           <label class="cp_sl09_selectlabel">段階</label>
         </div>
       </div>
-      <div class="form">
-        <label class="ef3">
-          <p>最近起こった出来事・感想</p>
-          <textarea
-            placeholder="何でもご自由にどうぞ！"
-            v-model="form_textarea"
-          />
-        </label>
+      <div class="nyuryoku">
+        <div class="form">
+          <label class="ef3">
+            <p>最近起こった出来事・感想</p>
+            <textarea
+              placeholder="何でもご自由にどうぞ！"
+              v-model="form_textarea"
+            />
+          </label>
+        </div>
       </div>
       <div class="form_button">
         <button v-on:click="posting" class="submit">投稿する</button>
@@ -162,6 +171,12 @@ export default {
 /* .nakami {
   text-align: center;
 } */
+
+.toukou_title {
+  color: #945fde;
+  text-align: center;
+}
+
 .nav_bar {
   height: 50px;
   display: flex;
@@ -200,6 +215,12 @@ export default {
 }
 
 /* ニックネーム */
+.namae {
+  width: 80%;
+  margin: 0 auto;
+  max-width: 500px;
+}
+
 .cp_iptxt {
   position: relative;
   width: 40%;
@@ -348,6 +369,9 @@ export default {
 /* 卒業年度終わり */
 
 .uni-bunri {
+  width: 80%;
+  margin: 0 auto;
+  max-width: 500px;
   display: flex;
 }
 
@@ -416,7 +440,7 @@ export default {
   box-sizing: inherit;
 }
 .cp_ipradio .box {
-  width: 50%;
+  width: 100%;
   display: flex;
   margin: 2em auto;
   text-align: center;
@@ -763,6 +787,12 @@ export default {
 .form textarea:focus {
   border: solid 2px #945fde;
   outline: 0;
+}
+
+.nyuryoku {
+  width: 80%;
+  margin: 0 auto;
+  max-width: 500px;
 }
 
 /* 入力エリア終わり */
