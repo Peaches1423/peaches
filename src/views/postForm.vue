@@ -2,9 +2,7 @@
   <div class="form-page">
     <div class="header">
       <div class="nav_bar">
-        <router-link to="/" class="nav_title">
-          就活情報シェアサイト</router-link
-        >
+        <div class="nav_title">就活情報シェアサイト</div>
         <div class="nav_items">
           <router-link to="/viewPage" class="item">閲覧画面へ</router-link>
           <router-link to="/" class="item">ログイン画面</router-link>
@@ -75,46 +73,49 @@
           </div>
         </div>
       </div>
-      <div>
-        <div class="cp_selectg">
-          <select class="cp_sl07" required v-model="gyoukai">
-            <option value="" hidden disabled selected></option>
-            <option>メーカー</option>
-            <option>商社</option>
-            <option>金融</option>
-            <option>マスコミ</option>
-            <option>IT</option>
-            <option>その他</option>
-          </select>
-          <span class="cp_sl07_highlight"></span>
-          <span class="cp_sl07_selectbar"></span>
-          <label class="cp_sl07_selectlabel">業界</label>
-        </div>
-        <!-- インターンor本選考 -->
-        <div class="select_i">
-          <select class="cp_sl08" required v-model="internOrHonsenkou">
-            <option value="" hidden disabled selected></option>
-            <option>インターン</option>
-            <option>本選考</option>
-            <option>その他</option>
-          </select>
-          <span class="cp_sl08_highlight"></span>
-          <span class="cp_sl08_selectbar"></span>
-          <label class="cp_sl08_selectlabel">インターンor本選考</label>
-        </div>
-        <div class="select_d">
-          <select class="cp_sl09" v-model="dankai">
-            <option value="" hidden disabled selected></option>
-            <option>ES</option>
-            <option>グループディスカッション</option>
-            <option>面接</option>
-            <option>その他</option>
-          </select>
-          <span class="cp_sl09_highlight"></span>
-          <span class="cp_sl09_selectbar"></span>
-          <label class="cp_sl09_selectlabel">段階</label>
-        </div>
+      <div class="hidukeSentaku">
+        <label>活動した日付：</label>
+        <input type="date" class="nentukihi" v-model="datePick" />
       </div>
+      <div class="cp_selectg">
+        <select class="cp_sl07" required v-model="gyoukai">
+          <option value="" hidden disabled selected></option>
+          <option>メーカー</option>
+          <option>商社</option>
+          <option>金融</option>
+          <option>マスコミ</option>
+          <option>IT</option>
+          <option>その他</option>
+        </select>
+        <span class="cp_sl07_highlight"></span>
+        <span class="cp_sl07_selectbar"></span>
+        <label class="cp_sl07_selectlabel">業界</label>
+      </div>
+      <!-- インターンor本選考 -->
+      <div class="select_i">
+        <select class="cp_sl08" required v-model="internOrHonsenkou">
+          <option value="" hidden disabled selected></option>
+          <option>インターン</option>
+          <option>本選考</option>
+          <option>その他</option>
+        </select>
+        <span class="cp_sl08_highlight"></span>
+        <span class="cp_sl08_selectbar"></span>
+        <label class="cp_sl08_selectlabel">インターンor本選考</label>
+      </div>
+      <div class="select_d">
+        <select class="cp_sl09" v-model="dankai">
+          <option value="" hidden disabled selected></option>
+          <option>ES</option>
+          <option>グループディスカッション</option>
+          <option>面接</option>
+          <option>その他</option>
+        </select>
+        <span class="cp_sl09_highlight"></span>
+        <span class="cp_sl09_selectbar"></span>
+        <label class="cp_sl09_selectlabel">段階</label>
+      </div>
+
       <div class="nyuryoku">
         <div class="form">
           <label class="ef3">
@@ -144,6 +145,7 @@ export default {
       nendo: "",
       university: "",
       bunri: "",
+      datePick: new Date(),
       gyoukai: "",
       internOrHonsenkou: "",
       dankai: "",
@@ -158,11 +160,21 @@ export default {
         nendo: this.nendo,
         university: this.university,
         bunri: this.bunri,
+        date: this.datePick,
         gyoukai: this.gyoukai,
         internOrHonsenkou: this.internOrHonsenkou,
         dankai: this.dankai,
         form_textarea: this.form_textarea,
       })
+      ;(this.form_username = ""),
+        (this.nendo = ""),
+        (this.university = ""),
+        (this.bunri = ""),
+        (this.datePick = ""),
+        (this.gyoukai = ""),
+        (this.internOrHonsenkou = ""),
+        (this.dankai = ""),
+        (this.form_textarea = "")
     },
   },
 }
@@ -196,23 +208,14 @@ export default {
   transition: all 0.25s;
 }
 .nav_title {
-  color: white;
+  color: #4f0bd6;
   font-size: 1.2em;
   padding: 10px;
 }
 
-.nav_title:hover {
-  background-color: #945fde;
-  transition: all 0.25s;
-}
-
 .item {
-  color: white;
+  color: #4f0bd6;
   padding: 10px;
-}
-
-.nav_login {
-  color: white;
 }
 
 /* ニックネーム */
@@ -379,7 +382,7 @@ export default {
 /* 大学 */
 .cp_ipuni {
   position: relative;
-  width: 30%;
+  width: 40%;
   margin: 40px 3%;
 }
 .cp_ipuni input[type="text"] {
@@ -502,6 +505,19 @@ export default {
   background: #ffffff;
 }
 /* 文理終わり */
+
+/* 日付選択 */
+.hidukeSentaku {
+  width: 80%;
+  margin: 0 auto;
+  max-width: 500px;
+}
+
+.nentukihi {
+  background-color: #fff0f5;
+  border-color: #945fde;
+}
+
 /* 業界 */
 .cp_selectg {
   position: relative;

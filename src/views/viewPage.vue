@@ -19,6 +19,7 @@
           <div id="uni">大学: {{ posts.university }}</div>
           <div id="bunrii">文理: {{ posts.bunri }}</div>
           <div id="nendoo">卒業年度: {{ posts.nendo }}</div>
+          <div id="hiduke">活動した日付: {{ posts.date }}</div>
           <div id="internorhonsenkouu">
             インターン/本選考: {{ posts.internOrHonsenkou }}
             <div id="gyoukaii">業界: {{ posts.gyoukai }}</div>
@@ -58,7 +59,7 @@ export default {
     firebase
       .firestore()
       .collection("posts")
-      .orderBy("createdAt", "desc")
+      .orderBy("date", "desc")
       .get()
       .then((snapshot) => {
         snapshot.docs.forEach((doc) => {
@@ -98,7 +99,7 @@ export default {
 </script>
 <style>
 .nav_item {
-  color: #9370db;
+  color: #4f0bd6;
 }
 
 .eturan {
@@ -123,14 +124,13 @@ export default {
 }
 .box {
   height: auto;
-  width: 20em;
+  width: 30em;
 
   margin: 0 auto;
-
-  padding: 1em 1.5em;
-
+  margin-bottom: 20px;
+  padding: 1em 5em;
   background-color: #fff0f5;
-  border: 1px solid #9370db;
+  border: 2px solid #9370db;
   color: #000000;
   border-radius: 10px;
 }
